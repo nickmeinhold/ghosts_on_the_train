@@ -1,3 +1,14 @@
+## My added ignores 
+*.g.dart
+# API Credentials
+lib/utilities/credentials.dart
+# Mock locations for tests (not really personal data but close enough) 
+lib/utilities/mocks.dart
+# Build files produced by an XCode build 
+ios/Build
+# flutter keeps creating this file but the file says don't check in
+# ios/Flutter/flutter_export_environment.sh
+
 # Miscellaneous
 *.class
 *.log
