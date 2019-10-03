@@ -6,13 +6,20 @@ import 'package:ghosts_on_the_train/models/app_state.dart';
 import 'package:ghosts_on_the_train/models/location.dart';
 import 'package:ghosts_on_the_train/models/problem.dart';
 import 'package:ptv_api_client/model/v3_departure.dart';
+import 'package:ptv_api_client/model/v3_departures_response.dart';
+import 'package:ptv_api_client/model/v3_direction.dart';
 import 'package:ptv_api_client/model/v3_disruption.dart';
 import 'package:ptv_api_client/model/v3_disruption_direction.dart';
 import 'package:ptv_api_client/model/v3_disruption_route.dart';
 import 'package:ptv_api_client/model/v3_disruption_stop.dart';
+import 'package:ptv_api_client/model/v3_result_stop.dart';
+import 'package:ptv_api_client/model/v3_route.dart';
+import 'package:ptv_api_client/model/v3_run.dart';
 import 'package:ptv_api_client/model/v3_status.dart';
 import 'package:ptv_api_client/model/v3_stop_geosearch.dart';
 import 'package:ptv_api_client/model/v3_stops_by_distance_response.dart';
+import 'package:ptv_api_client/model/v3_vehicle_descriptor.dart';
+import 'package:ptv_api_client/model/v3_vehicle_position.dart';
 
 part 'serializers.g.dart';
 

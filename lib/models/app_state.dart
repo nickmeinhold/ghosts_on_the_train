@@ -23,17 +23,21 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   BuiltList<Problem> get problems;
   Location get location;
   V3StopsByDistanceResponse get nearbyStops;
+  BuiltMap<int, V3DeparturesResponse> get stopDepartures;
 
-  static AppState initialState() => AppState((b) => b
-    ..homeIndex = 0
-    ..problems = ListBuilder<Problem>()
-    ..location.latitude = 0
-    ..location.longitude = 0
-    ..location.timestamp = DateTime.now().toUtc()
-    ..nearbyStops.disruptions = MapBuilder<String, V3Disruption>()
-    ..nearbyStops.status.health = 0
-    ..nearbyStops.status.version = ''
-    ..nearbyStops.stops = ListBuilder<V3StopGeosearch>());
+  static AppState initialState() => AppState(
+        (b) => b
+          ..homeIndex = 0
+          ..problems = ListBuilder<Problem>()
+          ..location.latitude = 0
+          ..location.longitude = 0
+          ..location.timestamp = DateTime.now().toUtc()
+          ..nearbyStops.disruptions = MapBuilder<String, V3Disruption>()
+          ..nearbyStops.status.health = 0
+          ..nearbyStops.status.version = ''
+          ..nearbyStops.stops = ListBuilder<V3StopGeosearch>()
+          ..stopDepartures = MapBuilder<int, V3DeparturesResponse>(),
+      );
 
   AppState._();
 

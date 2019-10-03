@@ -44,3 +44,17 @@ class ActionStoreNearbyStops extends Action {
       : super(<String, Object>{'nearbyStops': nearbyStops});
   final V3StopsByDistanceResponse nearbyStops;
 }
+
+class ActionGetStopDepartures extends Action {
+  ActionGetStopDepartures({@required this.stopId, @required this.routeType})
+      : super(<String, Object>{'stopId': stopId, 'routeType': routeType});
+  final int stopId;
+  final int routeType;
+}
+
+class ActionStoreStopDepartures extends Action {
+  ActionStoreStopDepartures({@required this.stopId, @required this.response})
+      : super(<String, Object>{'response': response});
+  final int stopId;
+  final V3DeparturesResponse response;
+}

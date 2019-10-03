@@ -9,6 +9,7 @@ final AppState Function(AppState, dynamic) appStateReducer =
   TypedReducer<AppState, ActionAddProblem>(_addProblem),
   TypedReducer<AppState, ActionStoreLocation>(_storeLocation),
   TypedReducer<AppState, ActionStoreNearbyStops>(_storeNearbyStops),
+  TypedReducer<AppState, ActionStoreStopDepartures>(_storeStopDepartures),
 ]);
 
 //
@@ -26,3 +27,9 @@ AppState _storeLocation(AppState state, ActionStoreLocation action) =>
 
 AppState _storeNearbyStops(AppState state, ActionStoreNearbyStops action) =>
     state.rebuild((b) => b..nearbyStops = action.nearbyStops.toBuilder());
+
+AppState _storeStopDepartures(
+        AppState state, ActionStoreStopDepartures action) =>
+    state.rebuild((b) => b
+      ..stopDepartures.updateValue(action.stopId, (response) => action.response,
+          ifAbsent: () => action.response));
