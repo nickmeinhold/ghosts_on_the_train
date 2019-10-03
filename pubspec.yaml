@@ -20,6 +20,7 @@ dependencies:
   redux_remote_devtools:
   built_collection:
   built_value:
+  google_maps_flutter:
     
 dev_dependencies:
   flutter_test:

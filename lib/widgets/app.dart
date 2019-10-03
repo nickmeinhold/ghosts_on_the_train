@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:ghosts_on_the_train/models/app_state.dart';
+import 'package:ghosts_on_the_train/models/location.dart';
 import 'package:ghosts_on_the_train/redux/actions.dart';
+import 'package:ghosts_on_the_train/widgets/map_widget.dart';
 import 'package:redux/redux.dart';
 
 class MyApp extends StatelessWidget {
@@ -39,8 +41,10 @@ class MyScaffold extends StatelessWidget {
         builder: (context, index) => IndexedStack(
           index: index,
           children: <Widget>[
-            Center(
-              child: Text('My Other Page!'),
+            StoreConnector<AppState, Location>(
+              converter: (store) => store.state.location,
+              builder: (context, location) =>
+                  MapWidget(location.latitude, location.longitude),
             ),
           ],
         ),
