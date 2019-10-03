@@ -6,7 +6,7 @@ import 'package:ghosts_on_the_train/redux/middleware.dart';
 import 'package:ghosts_on_the_train/redux/reducers.dart';
 import 'package:ghosts_on_the_train/services/api_service.dart';
 import 'package:ghosts_on_the_train/services/device_service.dart';
-import 'package:ghosts_on_the_train/utilities/mocks.dart';
+import 'package:ghosts_on_the_train/utilities/mocks.dart' as ip;
 import 'package:ghosts_on_the_train/widgets/app.dart';
 import 'package:ptv_api_client/api.dart';
 import 'package:ptv_api_client/api/routes_api.dart';
@@ -16,7 +16,7 @@ import 'package:redux_remote_devtools/redux_remote_devtools.dart';
 
 void main() async {
   final RemoteDevToolsMiddleware remoteDevtools =
-      RemoteDevToolsMiddleware(iphone_ip);
+      RemoteDevToolsMiddleware(ip.iphone_wifi);
   await remoteDevtools.connect();
 
   final departuresApi = DeparturesApi();

@@ -4,6 +4,7 @@ import 'package:ghosts_on_the_train/models/app_state.dart';
 import 'package:ghosts_on_the_train/models/location.dart';
 import 'package:ghosts_on_the_train/redux/actions.dart';
 import 'package:ghosts_on_the_train/widgets/map_widget.dart';
+import 'package:ptv_api_client/model/v3_stops_by_distance_response.dart';
 import 'package:redux/redux.dart';
 
 class MyApp extends StatelessWidget {
@@ -44,7 +45,11 @@ class MyScaffold extends StatelessWidget {
             StoreConnector<AppState, Location>(
               converter: (store) => store.state.location,
               builder: (context, location) =>
-                  MapWidget(location.latitude, location.longitude),
+                  StoreConnector<AppState, V3StopsByDistanceResponse>(
+                converter: (store) => store.state.nearbyStops,
+                builder: (context, stops) =>
+                    MapWidget(location.latitude, location.longitude, stops),
+              ),
             ),
           ],
         ),

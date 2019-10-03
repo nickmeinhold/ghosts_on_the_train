@@ -15,7 +15,7 @@ class DeviceService {
   Future<Action> requestLocationAction() async {
     // Position position = await _geolocator.getLastKnownPosition(
     // desiredAccuracy: LocationAccuracy.high);
-    Position position = location.microsoft;
+    Position position = location.amazon;
 
     return ActionStoreLocation(
       location: Location(
