@@ -72,3 +72,11 @@ post_install do |installer|
     end
   end
 end
+
+plugin 'cocoapods-keys', {
+  :project => "Runner",
+  :target => "Runner",
+  :keys => [
+    "GoogleMapsApi",
+  ]
+}
