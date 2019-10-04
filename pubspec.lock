@@ -394,7 +394,7 @@ packages:
     description:
       path: "."
       ref: built_value
-      resolved-ref: c59ade04bf412810810a6f936bd4ddbcfed753d9
+      resolved-ref: "0afd3065eb961036aebec4e68cf0bb1975c313ed"
       url: "https://github.com/nickmeinhold/ptv_api_client.git"
     source: git
     version: "0.0.1"

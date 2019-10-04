@@ -62,7 +62,10 @@ void Function(Store<AppState> store, ActionGetStopDepartures action,
     next(action);
 
     var response = await apiService.getDeparturesForStop(
-        stopId: action.stopId, routeType: action.routeType, maxResults: 5);
+        stopId: action.stopId,
+        routeType: action.routeType,
+        maxResults: 5,
+        expand: ['3']);
 
     store.dispatch(
         ActionStoreStopDepartures(stopId: action.stopId, response: response));
